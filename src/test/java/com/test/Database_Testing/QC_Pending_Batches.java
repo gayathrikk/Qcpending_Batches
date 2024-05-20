@@ -21,12 +21,13 @@ public class QC_Pending_Batches {
         Connection connection = DriverManager.getConnection(url, username, password);
         System.out.println("MYSQL database connected");
         
+        System.out.printf("##########");
         executeAndPrintQuery(connection);
+        System.out.printf("**********");
         connection.close();
     }
 
     private void executeAndPrintQuery(Connection connection) throws SQLException {
-        System.out.printf("##########");
         Statement statement = connection.createStatement();
         String query1 = "SELECT id,name,datalocation,arrival_date,totalImages FROM `slidebatch` WHERE `process_status` = 6 AND `arrival_date` < DATE_SUB(NOW(), INTERVAL 4 DAY);";
 
@@ -56,7 +57,6 @@ public class QC_Pending_Batches {
                    id, name, datalocation, arrival_date, totalImages);
             
         }
-        System.out.printf("**********");
         // Close the statement
         resultSet.close();
         statement.close();
