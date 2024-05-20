@@ -26,6 +26,7 @@ public class QC_Pending_Batches {
     }
 
     private void executeAndPrintQuery(Connection connection) throws SQLException {
+        System.out.printf("##########");
         Statement statement = connection.createStatement();
         String query1 = "SELECT id,name,datalocation,arrival_date,totalImages FROM `slidebatch` WHERE `process_status` = 6 AND `arrival_date` < DATE_SUB(NOW(), INTERVAL 4 DAY);";
 
@@ -51,12 +52,11 @@ public class QC_Pending_Batches {
             String datalocation = resultSet.getString("datalocation");
             String arrival_date = resultSet.getString("arrival_date"); // Assuming arrival_date is stored as a String
             int totalImages = resultSet.getInt("totalImages");
-            System.out.printf("##########");
             System.out.printf("%-" + IdWidth + "d %-" + nameWidth + "s %-" + datalocationWidth + "s %-" + arrival_dateWidth + "s %-" + totalImagesWidth + "d%n",
                    id, name, datalocation, arrival_date, totalImages);
-            System.out.printf("**********");
+            
         }
-
+        System.out.printf("**********");
         // Close the statement
         resultSet.close();
         statement.close();
