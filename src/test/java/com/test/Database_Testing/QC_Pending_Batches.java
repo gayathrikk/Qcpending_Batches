@@ -51,9 +51,10 @@ public class QC_Pending_Batches {
             String datalocation = resultSet.getString("datalocation");
             String arrival_date = resultSet.getString("arrival_date"); // Assuming arrival_date is stored as a String
             int totalImages = resultSet.getInt("totalImages");
-
+            System.out.printf("##########");
             System.out.printf("%-" + IdWidth + "d %-" + nameWidth + "s %-" + datalocationWidth + "s %-" + arrival_dateWidth + "s %-" + totalImagesWidth + "d%n",
                    id, name, datalocation, arrival_date, totalImages);
+            System.out.printf("**********");
         }
 
         // Close the statement
