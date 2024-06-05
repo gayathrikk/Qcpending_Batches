@@ -38,10 +38,11 @@ public class QC_Pending_Batches {
     private void executeAndPrintQuery(Connection connection) {
         try {
             Statement statement = connection.createStatement();
-            String query = "SELECT id, name, datalocation, arrival_date, totalImages " +
-                    "FROM `slidebatch` " +
-                    "WHERE (process_status = 6 OR process_status = 11) " +
-                    "AND `arrival_date` < CURDATE();";
+            String query = "SELECT id, name, datalocation, arrival_date, totalImages\r\n"
+            		+ "FROM `slidebatch`\r\n"
+            		+ "WHERE (process_status = 6 OR process_status = 11)\r\n"
+            		+ "AND `arrival_date` < DATE_SUB(CURDATE(), INTERVAL 1 DAY);\r\n"
+            		+ "";
 
             ResultSet resultSet = statement.executeQuery(query);
 
