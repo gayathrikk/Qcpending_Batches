@@ -54,7 +54,9 @@ public class QC_Pending_Batches {
             // Building email content
             StringBuilder emailContent = new StringBuilder();
             emailContent.append("<html><body><pre>");
-            emailContent.append("For your attention and action:\n\n");
+            emailContent.append("<b>This is an automatically generated email,</b>\n\n");
+            emailContent.append("For your attention and action:\n");
+            emailContent.append("The following batches have QC pending for more than 1 day:\n\n");
             emailContent.append(String.format("%-" + IdWidth + "s %-"+ nameWidth + "s %-"+ datalocationWidth + "s %-"+ arrival_dateWidth + "s %-" + totalImagesWidth + "s %-" + daysWidth + "s%n",
                     "Id", "name", "datalocation", "arrival_date", "totalImages", "No.of days"));
 
@@ -95,8 +97,8 @@ public class QC_Pending_Batches {
 
     private void sendEmailAlert(String messageBody) {
         // Recipient's email ID needs to be mentioned.
-        String[] to = {"nathan.i@htic.iitm.ac.in", "richavermaj@gmail.com", "karthik6595@gmail.com"};
-        String[] cc = {"lavanyabotcha@htic.iitm.ac.in", "divya.d@htic.iitm.ac.in", "venip@htic.iitm.ac.in"};
+    	String[] to = {"karthik6595@gmail.com"};
+        String[] cc = {"richavermaj@gmail.com", "nathan.i@htic.iitm.ac.in", "divya.d@htic.iitm.ac.in", "lavanyabotcha@htic.iitm.ac.in", "venip@htic.iitm.ac.in"};
         String[] bcc = {};
 
         // Sender's email ID needs to be mentioned
