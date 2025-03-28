@@ -98,7 +98,7 @@ public class QC_Pending_Batches {
     private void sendEmailAlert(String messageBody) {
         // Recipient's email ID needs to be mentioned.
     	String[] to = {"karthik6595@gmail.com"};
-        String[] cc = {"richavermaj@gmail.com", "nathan.i@htic.iitm.ac.in", "divya.d@htic.iitm.ac.in", "lavanyabotcha@htic.iitm.ac.in", "venip@htic.iitm.ac.in"};
+        String[] cc = {"richavermaj@gmail.com", "nathan.i@htic.iitm.ac.in", "divya.d@htic.iitm.ac.in", "venip@htic.iitm.ac.in"};
         String[] bcc = {};
 
         // Sender's email ID needs to be mentioned
