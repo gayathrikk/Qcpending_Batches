@@ -102,7 +102,7 @@ public class QC_Pending_Batches {
         String[] bcc = {};
 
         // Sender's email ID needs to be mentioned
-        String from = "gayathri@htic.iitm.ac.in";
+        String from = "automationsoftware25@gmail.com";
 
         // Assuming you are sending email from through gmails smtp
         String host = "smtp.gmail.com";
@@ -119,7 +119,7 @@ public class QC_Pending_Batches {
         // Get the Session object and pass username and password
         Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("gayathri@htic.iitm.ac.in", "Gayu@0918");
+                return new PasswordAuthentication("automationsoftware25@gmail.com", "wjzcgaramsqvagxu");
             }
         });
 
